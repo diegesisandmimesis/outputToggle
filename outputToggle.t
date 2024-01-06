@@ -14,11 +14,9 @@ outputToggleModuleID: ModuleID {
 }
 
 outputToggleFilter: OutputFilter, PreinitObject
-	isActive = nil
-	activate() { gTranscript.deactivate(); isActive = true; }
-	deactivate() { gTranscript.activate(); isActive = nil; }
-	filterText(str, val) { return(isActive ? '' : inherited(str, val)); }
-	execute() {
-		mainOutputStream.addOutputFilter(self);
-	}
+	active = nil
+	activate() { if(gTranscript) gTranscript.deactivate(); active = true; }
+	deactivate() { if(gTranscript) gTranscript.activate(); active = nil; }
+	filterText(str, val) { return(active ? '' : inherited(str, val)); }
+	execute() { mainOutputStream.addOutputFilter(self); }
 ;
