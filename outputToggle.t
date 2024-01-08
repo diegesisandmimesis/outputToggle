@@ -2,6 +2,21 @@
 //
 // outputToggle.t
 //
+//	This is a very simple TADS3/adv3 module that provides an output
+//	filter that will block all normal output.
+//
+//
+// USAGE
+//
+//	Disable output with:
+//
+//		gOutputOff;
+//
+//	Re-enable output with:
+//
+//		gOutputOn;
+//
+//
 #include <adv3.h>
 #include <en_us.h>
 
