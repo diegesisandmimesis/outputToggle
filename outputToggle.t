@@ -32,6 +32,7 @@ outputToggleFilter: OutputFilter, PreinitObject
 	active = nil
 	activate() { if(gTranscript) gTranscript.deactivate(); active = true; }
 	deactivate() { if(gTranscript) gTranscript.activate(); active = nil; }
+	set(v) { if(v == true) activate(); else deactivate(); }
 	filterText(str, val) { return(active ? '' : inherited(str, val)); }
 	execute() { mainOutputStream.addOutputFilter(self); }
 ;
