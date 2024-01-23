@@ -8,6 +8,8 @@
 #define gOutputOn (outputToggleFilter.deactivate())
 #define gOutputOff (outputToggleFilter.activate())
 #define gOutputCheck (outputToggleFilter.active)
-#define gOutputSet(v) (outputToggleFilter.set(v))
+
+#define gOutputLock (outputToggleFilter.activate())
+#define gOutputUnlock(v) (outputToggleFilter.deactivate(v))
 
 #define OUTPUT_TOGGLE_H
